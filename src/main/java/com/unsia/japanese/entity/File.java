@@ -1,5 +1,6 @@
 package com.unsia.japanese.entity;
 
+import com.unsia.japanese.dto.response.FileResponse;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,4 +22,12 @@ public class File extends Auditable<String> {
     private String contentType;
     private String path;
     private Long size;
+
+    public FileResponse toResponse() {
+        return FileResponse.builder()
+                .id(this.getId())
+                .filename(this.getName())
+                .url(this.getPath())
+                .build();
+    }
 }

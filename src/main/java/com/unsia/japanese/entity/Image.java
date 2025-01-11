@@ -2,7 +2,6 @@ package com.unsia.japanese.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -12,10 +11,7 @@ import lombok.experimental.SuperBuilder;
 @Data
 @Entity
 @NoArgsConstructor
-@AllArgsConstructor
 @SuperBuilder
 @Table(name = "m_image")
 public class Image extends File {
-    private Integer width;
-    private Integer height;
 }

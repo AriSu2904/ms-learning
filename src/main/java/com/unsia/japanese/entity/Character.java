@@ -1,5 +1,6 @@
 package com.unsia.japanese.entity;
 
+import com.unsia.japanese.dto.response.CharacterResponse;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -31,4 +32,18 @@ public class Character extends Auditable<String> {
     private Audio audio;
     @Column(name = "display_order")
     private Integer order;
+
+    public CharacterResponse toResponse() {
+        return CharacterResponse.builder()
+                .parent(this.material.toResponse())
+                .character(this.character)
+                .romaji(this.romaji)
+                .stroke(this.stroke)
+                .mean(this.mean)
+                .level(this.level)
+                .image(this.image.toResponse())
+                .audio(this.audio.toResponse())
+                .order(this.order)
+                .build();
+    }
 }
