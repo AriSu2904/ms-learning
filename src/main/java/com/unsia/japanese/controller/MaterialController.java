@@ -5,7 +5,6 @@ import com.unsia.japanese.dto.request.MaterialContentRequest;
 import com.unsia.japanese.dto.request.MaterialRequest;
 import com.unsia.japanese.dto.response.MaterialContentResponse;
 import com.unsia.japanese.dto.response.MaterialResponse;
-import com.unsia.japanese.entity.MaterialContent;
 import com.unsia.japanese.service.MaterialContentService;
 import com.unsia.japanese.service.MaterialService;
 import lombok.RequiredArgsConstructor;
@@ -43,7 +42,7 @@ public class MaterialController {
     @GetMapping(
             produces = "application/json"
     )
-    public ResponseEntity<CommonResponse<List<MaterialResponse>>> getAll(MaterialRequest material) {
+    public ResponseEntity<CommonResponse<List<MaterialResponse>>> getAll() {
         List<MaterialResponse> all = materialService.getAll();
 
         CommonResponse<List<MaterialResponse>> commonResponse = CommonResponse.<List<MaterialResponse>>builder()

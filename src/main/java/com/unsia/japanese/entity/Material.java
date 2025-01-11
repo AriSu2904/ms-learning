@@ -4,8 +4,6 @@ import com.unsia.japanese.dto.response.MaterialResponse;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.List;
-
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
