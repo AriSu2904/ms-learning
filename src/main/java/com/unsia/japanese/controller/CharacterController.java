@@ -41,6 +41,38 @@ public class CharacterController {
         return ResponseEntity.status(201).body(commonResponse);
     }
 
+    @PostMapping(
+            value = "/scrapper",
+            consumes = {MediaType.APPLICATION_JSON_VALUE},
+            produces = {MediaType.APPLICATION_JSON_VALUE}
+    )
+    public ResponseEntity<CommonResponse<CharacterResponse>> scrapper(@RequestBody CharacterRequest characterRequest) {
+        CharacterResponse characterResponse = characterService.scrapping(characterRequest);
+
+        CommonResponse<CharacterResponse> commonResponse = CommonResponse.<CharacterResponse>builder()
+                .errors(null)
+                .data(characterResponse)
+                .build();
+
+        return ResponseEntity.status(201).body(commonResponse);
+    }
+
+    @PostMapping(
+            value = "/scrapper/bulks",
+            consumes = {MediaType.APPLICATION_JSON_VALUE},
+            produces = {MediaType.APPLICATION_JSON_VALUE}
+    )
+    public ResponseEntity<CommonResponse<List<CharacterResponse>>> scrapperBulks(@RequestBody List<CharacterRequest> characterRequest) {
+        List<CharacterResponse> characterResponse = characterService.scrappingBulkInsert(characterRequest);
+
+        CommonResponse<List<CharacterResponse>> commonResponse = CommonResponse.<List<CharacterResponse>>builder()
+                .errors(null)
+                .data(characterResponse)
+                .build();
+
+        return ResponseEntity.status(201).body(commonResponse);
+    }
+
     @GetMapping(
             value = "/{name}",
             produces = {MediaType.APPLICATION_JSON_VALUE}

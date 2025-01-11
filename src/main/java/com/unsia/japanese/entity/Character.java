@@ -4,6 +4,8 @@ import com.unsia.japanese.dto.response.CharacterResponse;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
@@ -41,8 +43,8 @@ public class Character extends Auditable<String> {
                 .stroke(this.stroke)
                 .mean(this.mean)
                 .level(this.level)
-                .image(this.image.toResponse())
-                .audio(this.audio.toResponse())
+                .imgUri(this.image.getPath())
+                .audioUri(this.audio.getPath())
                 .order(this.order)
                 .build();
     }

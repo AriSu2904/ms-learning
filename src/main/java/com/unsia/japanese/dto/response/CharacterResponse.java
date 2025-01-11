@@ -4,6 +4,8 @@ import com.unsia.japanese.entity.Audio;
 import com.unsia.japanese.entity.Image;
 import lombok.*;
 
+import java.util.List;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -16,7 +18,7 @@ public class CharacterResponse {
     private Integer stroke;
     private String mean;
     private Integer level;
-    private FileResponse image;
-    private FileResponse audio;
+   private String imgUri;
+   private String audioUri;
     private Integer order;
 }
