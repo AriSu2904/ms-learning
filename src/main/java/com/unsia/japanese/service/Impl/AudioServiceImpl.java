@@ -2,7 +2,6 @@ package com.unsia.japanese.service.Impl;
 
 import com.unsia.japanese.entity.Audio;
 import com.unsia.japanese.entity.File;
-import com.unsia.japanese.entity.Image;
 import com.unsia.japanese.repository.AudioRepository;
 import com.unsia.japanese.service.AudioService;
 import com.unsia.japanese.service.FileService;

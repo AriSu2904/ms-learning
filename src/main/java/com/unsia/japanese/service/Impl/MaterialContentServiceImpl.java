@@ -7,9 +7,12 @@ import com.unsia.japanese.entity.MaterialContent;
 import com.unsia.japanese.repository.MaterialContentRepository;
 import com.unsia.japanese.service.MaterialContentService;
 import com.unsia.japanese.service.MaterialService;
+import com.unsia.japanese.utils.CredentialValidator;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -27,6 +30,11 @@ public class MaterialContentServiceImpl implements MaterialContentService {
 
     @Override
     public List<MaterialContentResponse> save(MaterialContentRequest materialContent) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        //validate role first
+        CredentialValidator.isValidAuthor(authentication);
+
         Material material = materialService.findByName(materialContent.getMaterialParent());
 
         List<MaterialContent> materialContents = generateContent(materialContent, material);

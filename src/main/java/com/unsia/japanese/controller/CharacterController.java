@@ -8,10 +8,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestPart;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
@@ -44,4 +41,18 @@ public class CharacterController {
         return ResponseEntity.status(201).body(commonResponse);
     }
 
+    @GetMapping(
+            value = "/{name}",
+            produces = {MediaType.APPLICATION_JSON_VALUE}
+    )
+    public ResponseEntity<CommonResponse<List<CharacterResponse>>> getLetters(@PathVariable String name) {
+        List<CharacterResponse> all = characterService.getLetters(name);
+
+        CommonResponse<List<CharacterResponse>> commonResponse = CommonResponse.<List<CharacterResponse>>builder()
+                .errors(null)
+                .data(all)
+                .build();
+
+        return ResponseEntity.ok(commonResponse);
+    }
 }

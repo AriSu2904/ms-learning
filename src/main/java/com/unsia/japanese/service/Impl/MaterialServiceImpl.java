@@ -5,10 +5,13 @@ import com.unsia.japanese.dto.response.MaterialResponse;
 import com.unsia.japanese.entity.Material;
 import com.unsia.japanese.repository.MaterialRepository;
 import com.unsia.japanese.service.MaterialService;
+import com.unsia.japanese.utils.CredentialValidator;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -27,6 +30,11 @@ public class MaterialServiceImpl implements MaterialService {
     public MaterialResponse create(MaterialRequest material) {
         String name = material.getName();
         log.info("Creating material with name: {}", name);
+
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        //validate role first
+        CredentialValidator.isValidAuthor(authentication);
 
         Material objMaterial = Material.builder()
                 .name(material.getName().toUpperCase())

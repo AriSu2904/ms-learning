@@ -67,6 +67,12 @@ public class CharacterServiceImpl implements CharacterService {
 
     @Override
     public List<CharacterResponse> getLetters(String name) {
-        return List.of();
+        Material material = materialService.findByName(name);
+
+        List<Character> characters = characterRepository.findCharactersByMaterial(material);
+
+        return characters.stream()
+                .map(Character::toResponse)
+                .toList();
     }
 }
