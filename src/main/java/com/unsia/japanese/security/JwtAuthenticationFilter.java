@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
@@ -30,6 +31,9 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     private final JwtService jwtService;
 
+    @Value("${unsia.issuer}")
+    private String authIssuer;
+
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
             throws ServletException, IOException {
@@ -39,11 +43,11 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             Claims claims = jwtService.extractAllClaims(token);
 
             String issuer = claims.getIssuer();
-            if ("".equals(issuer)) {
+            if (authIssuer.equals(issuer)) {
                 String studentId = claims.getSubject();
 
                 Object rolesClaim = claims.get("role");
-                if (rolesClaim == null || !(rolesClaim instanceof List)) {
+                if (!(rolesClaim instanceof List)) {
                     response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
                     response.getWriter().write("Invalid role claim");
                     return;
@@ -63,14 +67,12 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             return;
         }
 
-        // Lanjutkan ke filter berikutnya
         filterChain.doFilter(request, response);
     }
 
     private static List<SimpleGrantedAuthority> generateAuthority(List<Map<String, String>> rolesClaim, String studentId) {
-        List<Map<String, String>> roles = rolesClaim;
 
-        List<SimpleGrantedAuthority> authorities = roles.stream()
+        List<SimpleGrantedAuthority> authorities = rolesClaim.stream()
                 .map(roleMap -> {
                     String role = roleMap.get("authority");
                     if (role != null) {

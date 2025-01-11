@@ -1,10 +1,12 @@
 package com.unsia.japanese.entity;
 
+
 import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 @EqualsAndHashCode(callSuper = true)
@@ -15,8 +17,5 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @Table(name = "m_audio")
 public class Audio extends File {
-    @OneToOne
-    @JoinColumn(name = "kana_id", unique = true)
-    private Hirakana hirakana;
+    private Integer duration;
 }
-

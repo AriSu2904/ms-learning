@@ -1,21 +1,21 @@
 package com.unsia.japanese.entity;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
-@Data
 @EqualsAndHashCode(callSuper = true)
-@SuperBuilder
+@Data
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
+@SuperBuilder
 @Table(name = "m_image")
 public class Image extends File {
-    @OneToOne
-    @JoinColumn(name = "kana_id", unique = true)
-    private Hirakana hirakana;
+    private Integer width;
+    private Integer height;
 }

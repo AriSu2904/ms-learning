@@ -20,7 +20,6 @@ import java.time.LocalDateTime;
 @SuperBuilder
 @EntityListeners(AuditingEntityListener.class)
 public abstract class Auditable<U> {
-
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
