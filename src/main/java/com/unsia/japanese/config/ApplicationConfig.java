@@ -1,5 +1,9 @@
 package com.unsia.japanese.config;
 
+import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.info.Info;
+import io.swagger.v3.oas.models.security.SecurityRequirement;
+import io.swagger.v3.oas.models.security.SecurityScheme;
 import org.springframework.context.annotation.Configuration;
 
 import com.amazonaws.auth.AWSStaticCredentialsProvider;
@@ -11,7 +15,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.Optional;
 
@@ -46,5 +49,21 @@ public class ApplicationConfig {
             }
             return Optional.of(authentication.getName());
         };
+    }
+
+    @Bean
+    public OpenAPI customOpenAPI() {
+        return new OpenAPI()
+                .info(new Info()
+                        .title("API Dokumentasi")
+                        .version("1.0.0")
+                        .description("Dokumentasi API ms learning"))
+                .addSecurityItem(new SecurityRequirement().addList("BearerAuth"))
+                .components(new io.swagger.v3.oas.models.Components()
+                        .addSecuritySchemes("BearerAuth",
+                                new SecurityScheme()
+                                        .type(SecurityScheme.Type.HTTP)
+                                        .scheme("bearer")
+                                        .bearerFormat("JWT")));
     }
 }
