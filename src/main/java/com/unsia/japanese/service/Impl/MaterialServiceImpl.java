@@ -47,11 +47,41 @@ public class MaterialServiceImpl implements MaterialService {
         return savedMaterial.toResponse();
     }
 
+    private List<Material> generateMaterials() {
+        log.info("Generating materials");
+
+        Material material1 = Material.builder()
+                .name("HIRAGANA")
+                .description("Hiragana is a Japanese syllabary, one basic component of the Japanese writing system.")
+                .order(1)
+                .build();
+
+        Material material2 = Material.builder()
+                .name("KATAKANA")
+                .description("Katakana is a Japanese syllabary, one basic component of the Japanese writing system.")
+                .order(2)
+                .build();
+
+        Material material3 = Material.builder()
+                .name("KANJI N5")
+                .description("Kanji N5 is the first level of the Japanese Language Proficiency Test (JLPT).")
+                .order(3)
+                .build();
+
+        return List.of(material1, material2, material3);
+    }
+
     @Override
     public List<MaterialResponse> getAll() {
         log.info("Getting all materials");
 
         List<Material> Materials = materialRepository.findAll();
+
+        if(Materials.isEmpty()) {
+            Materials = generateMaterials();
+
+            materialRepository.saveAll(Materials);
+        }
 
         return Materials.stream()
                 .map(Material::toResponse)
