@@ -52,18 +52,21 @@ public class MaterialServiceImpl implements MaterialService {
 
         Material material1 = Material.builder()
                 .name("HIRAGANA")
+                .original("ひらがな")
                 .description("Hiragana is a Japanese syllabary, one basic component of the Japanese writing system.")
                 .order(1)
                 .build();
 
         Material material2 = Material.builder()
                 .name("KATAKANA")
+                .original("カタカナ")
                 .description("Katakana is a Japanese syllabary, one basic component of the Japanese writing system.")
                 .order(2)
                 .build();
 
         Material material3 = Material.builder()
                 .name("KANJI N5")
+                .original("漢字 N5")
                 .description("Kanji N5 is the first level of the Japanese Language Proficiency Test (JLPT).")
                 .order(3)
                 .build();

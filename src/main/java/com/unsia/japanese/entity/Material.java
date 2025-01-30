@@ -14,12 +14,14 @@ import lombok.*;
 public class Material extends Auditable<String> {
     @Column(nullable = false, unique = true)
     private String name;
+    private String original;
     private String description;
     @Column(name = "display_order")
     private Integer order;
     public MaterialResponse toResponse() {
         return MaterialResponse.builder()
             .name(this.name)
+            .original(this.original)
             .description(this.description)
             .order(this.order)
             .createdBy(this.getCreatedBy())

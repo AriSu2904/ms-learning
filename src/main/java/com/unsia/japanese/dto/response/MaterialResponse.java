@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 @Builder
 public class MaterialResponse {
     private String name;
+    private String original;
     private String description;
     private Integer order;
     private String createdBy;
