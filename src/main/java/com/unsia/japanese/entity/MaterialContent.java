@@ -19,6 +19,7 @@ public class MaterialContent extends Auditable<String> {
     @JoinColumn(name = "material_id", nullable = false)
     private Material materialId;
     private String name;
+    private String imageUri;
     private String description;
     private Integer position;
 
@@ -29,6 +30,7 @@ public class MaterialContent extends Auditable<String> {
             .description(this.description)
             .position(this.position)
                 .materialParent(this.materialId.toResponse())
+            .imageUri(this.imageUri)
             .createdBy(this.getCreatedBy())
             .createdAt(this.getCreationDate())
             .build();

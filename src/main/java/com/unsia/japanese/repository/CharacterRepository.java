@@ -8,4 +8,5 @@ import java.util.List;
 
 public interface CharacterRepository extends JpaRepository<Character, String> {
     List<Character> findCharactersByMaterial(Material material);
+    List<Character> findCharactersByMaterialAndLevel(Material material, Integer level);
 }

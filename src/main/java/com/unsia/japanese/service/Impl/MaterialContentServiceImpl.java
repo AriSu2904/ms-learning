@@ -15,9 +15,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 @Service
 @Slf4j
@@ -37,7 +35,7 @@ public class MaterialContentServiceImpl implements MaterialContentService {
 
         Material material = materialService.findByName(materialContent.getMaterialParent());
 
-        List<MaterialContent> materialContents = generateContent(materialContent, material);
+        List<MaterialContent> materialContents = generateContent(material);
 
         return materialContentRepository.saveAll(materialContents).stream()
                 .map(MaterialContent::toResponse)
@@ -49,59 +47,48 @@ public class MaterialContentServiceImpl implements MaterialContentService {
     public List<MaterialContentResponse> getContent(String name) {
         Material material = materialService.findByName(name);
 
-        return materialContentRepository.findByMaterialId(material).stream()
+        return generateContent(material).stream()
                 .map(MaterialContent::toResponse)
                 .sorted(Comparator.comparing(MaterialContentResponse::getPosition))
                 .toList();
     }
 
-    private List<MaterialContent> generateContent(MaterialContentRequest request, Material material) {
-        List<MaterialContent> contents = new ArrayList<>();
+    private List<MaterialContent> generateContent(Material material) {
+        List<String> imageUri = imageBackground();
+        List<MaterialContent> contents = List.of(
+            createMaterialContent(material, "Letters", imageUri.get(0), "main letters of ", 1),
+            createMaterialContent(material, "Ten&Maru", imageUri.get(1), "voicing mark of ", 2),
+            createMaterialContent(material, "Yōon", imageUri.get(2), "semi-voicing mark of ", 3),
+            createMaterialContent(material, "Quiz", imageUri.get(3), "Test your knowledge of ", 4)
+        );
+        return new ArrayList<>(contents);
+    }
 
-        if(request.isRequiredLetters()) {
-            MaterialContent withLetters = MaterialContent.builder()
-                    .materialId(material)
-                    .name("Letters")
-                    .description("Letters for learning")
-                    .position(0)
-                    .build();
+    private MaterialContent createMaterialContent(Material material, String name, String imageUri, String descriptionPrefix, int position) {
+        return MaterialContent.builder()
+                .materialId(material)
+                .name(name)
+                .imageUri(imageUri)
+                .description(descriptionPrefix + material.getName().toLowerCase())
+                .position(position)
+                .build();
+    }
 
-            contents.add(withLetters);
+    private List<String> imageBackground() {
+        String BASE_URL = "https://jpn-bucket.s3.ap-southeast-2.amazonaws.com/materials/";
+
+        List<String> FILE_NAMES = List.of(
+                "hira-ke", "hira-ku", "hira-ki", "hira-u", "hira-i", "hira-a", "hira-to", "hira-ka", "hira-e", "hira-o"
+        );
+
+        List<String> shuffledFileNames = new ArrayList<>(FILE_NAMES);
+        Collections.shuffle(shuffledFileNames);
+        List<String> randomUrls = new ArrayList<>();
+
+        for (int i = 0; i < 4; i++) {
+            randomUrls.add(BASE_URL + shuffledFileNames.get(i) + ".jpg");
         }
 
-        if(request.isRequiredQuizzes()) {
-            MaterialContent withQuizzes = MaterialContent.builder()
-                    .materialId(material)
-                    .name("Quiz")
-                    .description("Quizzes for learning")
-                    .position(1)
-                    .build();
-
-            contents.add(withQuizzes);
-        }
-
-        if(request.isRequiredEasyLearn()) {
-            MaterialContent withEasyLearn = MaterialContent.builder()
-                    .materialId(material)
-                    .name("Easy Learn")
-                    .description("Easy learning for beginners")
-                    .position(2)
-                    .build();
-
-            contents.add(withEasyLearn);
-        }
-
-        if(request.isRequiredTest()) {
-            MaterialContent withTest = MaterialContent.builder()
-                    .materialId(material)
-                    .name("Test")
-                    .description("Test for learning")
-                    .position(3)
-                    .build();
-
-            contents.add(withTest);
-        }
-
-        return contents;
+        return randomUrls;
     }
 }

@@ -19,6 +19,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
@@ -39,6 +40,12 @@ public class CharacterServiceImpl implements CharacterService {
 
     @Value(("${unsia.hirakana.base_url.image}"))
     private String imageUri;
+
+    @Value(("${unsia.hirakana.base_url.image2}"))
+    private String secondImageUri;
+
+    @Value(("${unsia.hirakana.base_url.image_detail}"))
+    private String secondImageDetailUri;
 
     @Override
     public CharacterResponse save(CharacterRequest request, List<MultipartFile> files) {
@@ -116,6 +123,8 @@ public class CharacterServiceImpl implements CharacterService {
                 .map(request -> {
                     String audio = constructUrl(request.getRomaji(),".mp3", material.getName());
                     String image = constructUrl(request.getRomaji(), ".png", material.getName());
+                    String secondImage = constructNHKImage(request.getRomaji(), ".png", material.getName(), false);
+                    String secondImageDetail = constructNHKImage(request.getRomaji(), ".png", material.getName(), true);
 
                     return Character.builder()
                             .material(material)
@@ -124,9 +133,12 @@ public class CharacterServiceImpl implements CharacterService {
                             .stroke(request.getStroke())
                             .mean(request.getMean())
                             .level(request.getLevel())
+                            .section(request.getSection())
                             .order(request.getOrder())
                             .audio(Audio.builder().path(audio).build())
                             .image(Image.builder().path(image).build())
+                            .secondImage(secondImage)
+                            .secondImageDetail(secondImageDetail)
                             .build();
                 })
                 .toList();
@@ -140,10 +152,15 @@ public class CharacterServiceImpl implements CharacterService {
     }
 
     @Override
-    public List<CharacterResponse> getLetters(String name) {
+    public List<CharacterResponse> getLetters(String name, Integer level) {
         Material material = materialService.findByName(name);
 
-        List<Character> characters = characterRepository.findCharactersByMaterial(material);
+        List<Character> characters;
+        if(level != null) {
+            characters = characterRepository.findCharactersByMaterialAndLevel(material, level);
+        } else {
+            characters = characterRepository.findCharactersByMaterial(material);
+        }
 
         return characters.stream()
                 .map(Character::toResponse)
@@ -156,6 +173,8 @@ public class CharacterServiceImpl implements CharacterService {
         String fileName = lowerCaseName + extension;
 
         if(Objects.equals(extension, ".mp3")) {
+            log.info("[ARI] Current audio url: " + this.audioUri);
+
             return audioUri + fileName;
         }
 
@@ -163,5 +182,17 @@ public class CharacterServiceImpl implements CharacterService {
         fileName = letter + "_" + lowerCaseName + extension;
 
         return imageUri + fileName;
+    }
+
+    private String constructNHKImage(String romaji, String extension, String parent, boolean isDetail) {
+        String lowerCaseName = romaji.toLowerCase();
+        String fileName = lowerCaseName + extension;
+        String pathUri = parent.equals("hiragana".toUpperCase()) ? "hira" : "kana";
+
+        if(isDetail) {
+           return this.secondImageDetailUri + pathUri + "/" + fileName;
+        }
+
+        return this.secondImageUri + pathUri + "/" + fileName;
     }
 }

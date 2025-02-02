@@ -77,8 +77,8 @@ public class CharacterController {
             value = "/{name}",
             produces = {MediaType.APPLICATION_JSON_VALUE}
     )
-    public ResponseEntity<CommonResponse<List<CharacterResponse>>> getLetters(@PathVariable String name) {
-        List<CharacterResponse> all = characterService.getLetters(name);
+    public ResponseEntity<CommonResponse<List<CharacterResponse>>> getLetters(@PathVariable String name, @RequestParam(required = false) Integer level) {
+        List<CharacterResponse> all = characterService.getLetters(name, level);
 
         CommonResponse<List<CharacterResponse>> commonResponse = CommonResponse.<List<CharacterResponse>>builder()
                 .errors(null)

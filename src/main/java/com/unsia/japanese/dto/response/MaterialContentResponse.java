@@ -14,6 +14,7 @@ public class MaterialContentResponse {
     private String  createdBy;
     private LocalDateTime createdAt;
     private MaterialResponse materialParent;
+    private String imageUri;
     private String name;
     private String description;
     private Integer position;

@@ -18,6 +18,9 @@ public class CharacterResponse {
     private Integer stroke;
     private String mean;
     private Integer level;
+    private String section;
+    private String secondImgUri;
+    private String secondImgDetailUri;
    private String imgUri;
    private String audioUri;
     private Integer order;

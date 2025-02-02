@@ -13,6 +13,7 @@ public class CharacterRequest {
     private String parentName;
     private String character;
     private String romaji;
+    private String section;
     private Integer stroke;
     private String mean;
     private Integer level;

@@ -141,7 +141,7 @@
     "romaji": "TA",
     "stroke": 4,
     "mean": "た is TA in Hiragana",
-    "level": 2,
+    "level": 1,
     "order": 15
   },
   {
@@ -150,7 +150,7 @@
     "romaji": "CHI",
     "stroke": 3,
     "mean": "ち is CHI in Hiragana",
-    "level": 2,
+    "level": 1,
     "order": 16
   },
   {
@@ -159,7 +159,7 @@
     "romaji": "TSU",
     "stroke": 3,
     "mean": "つ is TSU in Hiragana",
-    "level": 2,
+    "level": 1,
     "order": 17
   },
   {
@@ -168,7 +168,7 @@
     "romaji": "TE",
     "stroke": 2,
     "mean": "て is TE in Hiragana",
-    "level": 2,
+    "level": 1,
     "order": 18
   },
   {
@@ -177,7 +177,7 @@
     "romaji": "TO",
     "stroke": 2,
     "mean": "と is TO in Hiragana",
-    "level": 2,
+    "level": 1,
     "order": 19
   },
   {
@@ -186,7 +186,7 @@
     "romaji": "NA",
     "stroke": 4,
     "mean": "な is NA in Hiragana",
-    "level": 2,
+    "level": 1,
     "order": 20
   },
   {
@@ -195,7 +195,7 @@
     "romaji": "NI",
     "stroke": 3,
     "mean": "に is NI in Hiragana",
-    "level": 2,
+    "level": 1,
     "order": 21
   },
   {
@@ -204,7 +204,7 @@
     "romaji": "NU",
     "stroke": 2,
     "mean": "ぬ is NU in Hiragana",
-    "level": 2,
+    "level": 1,
     "order": 22
   },
   {
@@ -213,7 +213,7 @@
     "romaji": "NE",
     "stroke": 3,
     "mean": "ね is NE in Hiragana",
-    "level": 2,
+    "level": 1,
     "order": 23
   },
   {
@@ -222,7 +222,7 @@
     "romaji": "NO",
     "stroke": 1,
     "mean": "の is NO in Hiragana",
-    "level": 2,
+    "level": 1,
     "order": 24
   },
   {
@@ -231,7 +231,7 @@
     "romaji": "HA",
     "stroke": 3,
     "mean": "は is HA in Hiragana",
-    "level": 3,
+    "level": 1,
     "order": 25
   },
   {
@@ -240,7 +240,7 @@
     "romaji": "HI",
     "stroke": 2,
     "mean": "ひ is HI in Hiragana",
-    "level": 3,
+    "level": 1,
     "order": 26
   },
   {
@@ -249,7 +249,7 @@
     "romaji": "FU",
     "stroke": 3,
     "mean": "ふ is FU in Hiragana",
-    "level": 3,
+    "level": 1,
     "order": 27
   },
   {
@@ -258,7 +258,7 @@
     "romaji": "HE",
     "stroke": 1,
     "mean": "へ is HE in Hiragana",
-    "level": 3,
+    "level": 1,
     "order": 28
   },
   {
@@ -267,7 +267,7 @@
     "romaji": "HO",
     "stroke": 4,
     "mean": "ほ is HO in Hiragana",
-    "level": 3,
+    "level": 1,
     "order": 29
   },
   {
@@ -276,7 +276,7 @@
     "romaji": "MA",
     "stroke": 3,
     "mean": "ま is MA in Hiragana",
-    "level": 3,
+    "level": 1,
     "order": 30
   },
   {
@@ -285,7 +285,7 @@
     "romaji": "MI",
     "stroke": 3,
     "mean": "み is MI in Hiragana",
-    "level": 3,
+    "level": 1,
     "order": 31
   },
   {
@@ -294,7 +294,7 @@
     "romaji": "MU",
     "stroke": 3,
     "mean": "む is MU in Hiragana",
-    "level": 3,
+    "level": 1,
     "order": 32
   },
   {
@@ -303,7 +303,7 @@
     "romaji": "ME",
     "stroke": 2,
     "mean": "め is ME in Hiragana",
-    "level": 3,
+    "level": 1,
     "order": 33
   },
   {
@@ -312,7 +312,7 @@
     "romaji": "MO",
     "stroke": 3,
     "mean": "も is MO in Hiragana",
-    "level": 3,
+    "level": 1,
     "order": 34
   },
   {
@@ -321,7 +321,7 @@
     "romaji": "YA",
     "stroke": 3,
     "mean": "や is YA in Hiragana",
-    "level": 4,
+    "level": 1,
     "order": 35
   },
   {
@@ -330,7 +330,7 @@
     "romaji": "YU",
     "stroke": 2,
     "mean": "ゆ is YU in Hiragana",
-    "level": 4,
+    "level": 1,
     "order": 36
   },
   {
@@ -339,7 +339,7 @@
     "romaji": "YO",
     "stroke": 2,
     "mean": "よ is YO in Hiragana",
-    "level": 4,
+    "level": 1,
     "order": 37
   },
   {
@@ -348,7 +348,7 @@
     "romaji": "RA",
     "stroke": 2,
     "mean": "ら is RA in Hiragana",
-    "level": 4,
+    "level": 1,
     "order": 38
   },
   {
@@ -357,7 +357,7 @@
     "romaji": "RI",
     "stroke": 2,
     "mean": "り is RI in Hiragana",
-    "level": 4,
+    "level": 1,
     "order": 39
   },
   {
@@ -366,7 +366,7 @@
     "romaji": "RU",
     "stroke": 2,
     "mean": "る is RU in Hiragana",
-    "level": 4,
+    "level": 1,
     "order": 40
   },
   {
@@ -375,7 +375,7 @@
     "romaji": "RE",
     "stroke": 2,
     "mean": "れ is RE in Hiragana",
-    "level": 4,
+    "level": 1,
     "order": 41
   },
   {
@@ -384,7 +384,7 @@
     "romaji": "RO",
     "stroke": 3,
     "mean": "ろ is RO in Hiragana",
-    "level": 4,
+    "level": 1,
     "order": 42
   },
   {
@@ -393,7 +393,7 @@
     "romaji": "WA",
     "stroke": 2,
     "mean": "わ is WA in Hiragana",
-    "level": 4,
+    "level": 1,
     "order": 43
   },
   {
@@ -402,7 +402,7 @@
     "romaji": "WO",
     "stroke": 3,
     "mean": "を is WO in Hiragana",
-    "level": 4,
+    "level": 1,
     "order": 44
   },
   {
@@ -411,7 +411,7 @@
     "romaji": "N",
     "stroke": 1,
     "mean": "ん is N in Hiragana",
-    "level": 4,
+    "level": 1,
     "order": 45
   }
 ],
@@ -435,42 +435,42 @@
     { "parentName": "Katakana", "character": "セ", "romaji": "SE", "stroke": 3, "mean": "セ is SE in Katakana", "level": 1, "order": 13 },
     { "parentName": "Katakana", "character": "ソ", "romaji": "SO", "stroke": 2, "mean": "ソ is SO in Katakana", "level": 1, "order": 14 },
 
-    { "parentName": "Katakana", "character": "タ", "romaji": "TA", "stroke": 4, "mean": "タ is TA in Katakana", "level": 2, "order": 15 },
-    { "parentName": "Katakana", "character": "チ", "romaji": "CHI", "stroke": 3, "mean": "チ is CHI in Katakana", "level": 2, "order": 16 },
-    { "parentName": "Katakana", "character": "ツ", "romaji": "TSU", "stroke": 3, "mean": "ツ is TSU in Katakana", "level": 2, "order": 17 },
-    { "parentName": "Katakana", "character": "テ", "romaji": "TE", "stroke": 2, "mean": "テ is TE in Katakana", "level": 2, "order": 18 },
-    { "parentName": "Katakana", "character": "ト", "romaji": "TO", "stroke": 2, "mean": "ト is TO in Katakana", "level": 2, "order": 19 },
+    { "parentName": "Katakana", "character": "タ", "romaji": "TA", "stroke": 4, "mean": "タ is TA in Katakana", "level": 1, "order": 15 },
+    { "parentName": "Katakana", "character": "チ", "romaji": "CHI", "stroke": 3, "mean": "チ is CHI in Katakana", "level": 1, "order": 16 },
+    { "parentName": "Katakana", "character": "ツ", "romaji": "TSU", "stroke": 3, "mean": "ツ is TSU in Katakana", "level": 1, "order": 17 },
+    { "parentName": "Katakana", "character": "テ", "romaji": "TE", "stroke": 2, "mean": "テ is TE in Katakana", "level": 1, "order": 18 },
+    { "parentName": "Katakana", "character": "ト", "romaji": "TO", "stroke": 2, "mean": "ト is TO in Katakana", "level": 1, "order": 19 },
 
-    { "parentName": "Katakana", "character": "ナ", "romaji": "NA", "stroke": 4, "mean": "ナ is NA in Katakana", "level": 2, "order": 20 },
-    { "parentName": "Katakana", "character": "ニ", "romaji": "NI", "stroke": 3, "mean": "ニ is NI in Katakana", "level": 2, "order": 21 },
-    { "parentName": "Katakana", "character": "ヌ", "romaji": "NU", "stroke": 2, "mean": "ヌ is NU in Katakana", "level": 2, "order": 22 },
-    { "parentName": "Katakana", "character": "ネ", "romaji": "NE", "stroke": 3, "mean": "ネ is NE in Katakana", "level": 2, "order": 23 },
-    { "parentName": "Katakana", "character": "ノ", "romaji": "NO", "stroke": 1, "mean": "ノ is NO in Katakana", "level": 2, "order": 24 },
+    { "parentName": "Katakana", "character": "ナ", "romaji": "NA", "stroke": 4, "mean": "ナ is NA in Katakana", "level": 1, "order": 20 },
+    { "parentName": "Katakana", "character": "ニ", "romaji": "NI", "stroke": 3, "mean": "ニ is NI in Katakana", "level": 1, "order": 21 },
+    { "parentName": "Katakana", "character": "ヌ", "romaji": "NU", "stroke": 2, "mean": "ヌ is NU in Katakana", "level": 1, "order": 22 },
+    { "parentName": "Katakana", "character": "ネ", "romaji": "NE", "stroke": 3, "mean": "ネ is NE in Katakana", "level": 1, "order": 23 },
+    { "parentName": "Katakana", "character": "ノ", "romaji": "NO", "stroke": 1, "mean": "ノ is NO in Katakana", "level": 1, "order": 24 },
 
-    { "parentName": "Katakana", "character": "ハ", "romaji": "HA", "stroke": 3, "mean": "ハ is HA in Katakana", "level": 3, "order": 25 },
-    { "parentName": "Katakana", "character": "ヒ", "romaji": "HI", "stroke": 2, "mean": "ヒ is HI in Katakana", "level": 3, "order": 26 },
-    { "parentName": "Katakana", "character": "フ", "romaji": "FU", "stroke": 3, "mean": "フ is FU in Katakana", "level": 3, "order": 27 },
-    { "parentName": "Katakana", "character": "ヘ", "romaji": "HE", "stroke": 1, "mean": "ヘ is HE in Katakana", "level": 3, "order": 28 },
-    { "parentName": "Katakana", "character": "ホ", "romaji": "HO", "stroke": 4, "mean": "ホ is HO in Katakana", "level": 3, "order": 29 },
+    { "parentName": "Katakana", "character": "ハ", "romaji": "HA", "stroke": 3, "mean": "ハ is HA in Katakana", "level": 1, "order": 25 },
+    { "parentName": "Katakana", "character": "ヒ", "romaji": "HI", "stroke": 2, "mean": "ヒ is HI in Katakana", "level": 1, "order": 26 },
+    { "parentName": "Katakana", "character": "フ", "romaji": "FU", "stroke": 3, "mean": "フ is FU in Katakana", "level": 1, "order": 27 },
+    { "parentName": "Katakana", "character": "ヘ", "romaji": "HE", "stroke": 1, "mean": "ヘ is HE in Katakana", "level": 1, "order": 28 },
+    { "parentName": "Katakana", "character": "ホ", "romaji": "HO", "stroke": 4, "mean": "ホ is HO in Katakana", "level": 1, "order": 29 },
 
-    { "parentName": "Katakana", "character": "マ", "romaji": "MA", "stroke": 3, "mean": "マ is MA in Katakana", "level": 3, "order": 30 },
-    { "parentName": "Katakana", "character": "ミ", "romaji": "MI", "stroke": 3, "mean": "ミ is MI in Katakana", "level": 3, "order": 31 },
-    { "parentName": "Katakana", "character": "ム", "romaji": "MU", "stroke": 3, "mean": "ム is MU in Katakana", "level": 3, "order": 32 },
-    { "parentName": "Katakana", "character": "メ", "romaji": "ME", "stroke": 2, "mean": "メ is ME in Katakana", "level": 3, "order": 33 },
-    { "parentName": "Katakana", "character": "モ", "romaji": "MO", "stroke": 3, "mean": "モ is MO in Katakana", "level": 3, "order": 34 },
+    { "parentName": "Katakana", "character": "マ", "romaji": "MA", "stroke": 3, "mean": "マ is MA in Katakana", "level": 1, "order": 30 },
+    { "parentName": "Katakana", "character": "ミ", "romaji": "MI", "stroke": 3, "mean": "ミ is MI in Katakana", "level": 1, "order": 31 },
+    { "parentName": "Katakana", "character": "ム", "romaji": "MU", "stroke": 3, "mean": "ム is MU in Katakana", "level": 1, "order": 32 },
+    { "parentName": "Katakana", "character": "メ", "romaji": "ME", "stroke": 2, "mean": "メ is ME in Katakana", "level": 1, "order": 33 },
+    { "parentName": "Katakana", "character": "モ", "romaji": "MO", "stroke": 3, "mean": "モ is MO in Katakana", "level": 1, "order": 34 },
 
-    { "parentName": "Katakana", "character": "ヤ", "romaji": "YA", "stroke": 3, "mean": "ヤ is YA in Katakana", "level": 4, "order": 35 },
-    { "parentName": "Katakana", "character": "ユ", "romaji": "YU", "stroke": 2, "mean": "ユ is YU in Katakana", "level": 4, "order": 36 },
-    { "parentName": "Katakana", "character": "ヨ", "romaji": "YO", "stroke": 2, "mean": "ヨ is YO in Katakana", "level": 4, "order": 37 },
+    { "parentName": "Katakana", "character": "ヤ", "romaji": "YA", "stroke": 3, "mean": "ヤ is YA in Katakana", "level": 1, "order": 35 },
+    { "parentName": "Katakana", "character": "ユ", "romaji": "YU", "stroke": 2, "mean": "ユ is YU in Katakana", "level": 1, "order": 36 },
+    { "parentName": "Katakana", "character": "ヨ", "romaji": "YO", "stroke": 2, "mean": "ヨ is YO in Katakana", "level": 1, "order": 37 },
 
-    { "parentName": "Katakana", "character": "ラ", "romaji": "RA", "stroke": 2, "mean": "ラ is RA in Katakana", "level": 4, "order": 38 },
-    { "parentName": "Katakana", "character": "リ", "romaji": "RI", "stroke": 2, "mean": "リ is RI in Katakana", "level": 4, "order": 39 },
-    { "parentName": "Katakana", "character": "ル", "romaji": "RU", "stroke": 2, "mean": "ル is RU in Katakana", "level": 4, "order": 40 },
-    { "parentName": "Katakana", "character": "レ", "romaji": "RE", "stroke": 2, "mean": "レ is RE in Katakana", "level": 4, "order": 41 },
-    { "parentName": "Katakana", "character": "ロ", "romaji": "RO", "stroke": 3, "mean": "ロ is RO in Katakana", "level": 4, "order": 42 },
+    { "parentName": "Katakana", "character": "ラ", "romaji": "RA", "stroke": 2, "mean": "ラ is RA in Katakana", "level": 1, "order": 38 },
+    { "parentName": "Katakana", "character": "リ", "romaji": "RI", "stroke": 2, "mean": "リ is RI in Katakana", "level": 1, "order": 39 },
+    { "parentName": "Katakana", "character": "ル", "romaji": "RU", "stroke": 2, "mean": "ル is RU in Katakana", "level": 1, "order": 40 },
+    { "parentName": "Katakana", "character": "レ", "romaji": "RE", "stroke": 2, "mean": "レ is RE in Katakana", "level": 1, "order": 41 },
+    { "parentName": "Katakana", "character": "ロ", "romaji": "RO", "stroke": 3, "mean": "ロ is RO in Katakana", "level": 1, "order": 42 },
 
-    { "parentName": "Katakana", "character": "ワ", "romaji": "WA", "stroke": 2, "mean": "ワ is WA in Katakana", "level": 4, "order": 43 },
-    { "parentName": "Katakana", "character": "ヲ", "romaji": "WO", "stroke": 3, "mean": "ヲ is WO in Katakana", "level": 4, "order": 44 },
-    { "parentName": "Katakana", "character": "ン", "romaji": "N", "stroke": 1, "mean": "ン is N in Katakana", "level": 4, "order": 45 }
+    { "parentName": "Katakana", "character": "ワ", "romaji": "WA", "stroke": 2, "mean": "ワ is WA in Katakana", "level": 1, "order": 43 },
+    { "parentName": "Katakana", "character": "ヲ", "romaji": "WO", "stroke": 3, "mean": "ヲ is WO in Katakana", "level": 1, "order": 44 },
+    { "parentName": "Katakana", "character": "ン", "romaji": "N", "stroke": 1, "mean": "ン is N in Katakana", "level": 1, "order": 45 }
   ]
 }

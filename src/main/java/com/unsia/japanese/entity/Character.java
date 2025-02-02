@@ -32,6 +32,12 @@ public class Character extends Auditable<String> {
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "audio_id")
     private Audio audio;
+    @Column(name = "second_image")
+    private String secondImage;
+    @Column(name = "second_image_detail")
+    private String secondImageDetail;
+    @Column(nullable = false)
+    private String section;
     @Column(name = "display_order")
     private Integer order;
 
@@ -43,8 +49,11 @@ public class Character extends Auditable<String> {
                 .stroke(this.stroke)
                 .mean(this.mean)
                 .level(this.level)
+                .section(this.section)
                 .imgUri(this.image.getPath())
                 .audioUri(this.audio.getPath())
+                .secondImgUri(this.secondImage)
+                .secondImgDetailUri(this.secondImageDetail)
                 .order(this.order)
                 .build();
     }
